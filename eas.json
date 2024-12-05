@@ -16,6 +16,9 @@
     }
   },
   "submit": {
-    "production": {}
+    "android": {
+      "serviceAccountKeyPath": "./local-turbine-441617-q5-21feceab6a3a.json",
+      "track": "internal"
+    }
   }
 }

@@ -35,4 +35,7 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
+#Google Play
+local-turbine-441617-q5-21feceab6a3a.json
+
 app-example

@@ -21,7 +21,6 @@ export default function VictimTracking() {
 
   const fetchOpenOccurrence = async () => {
     try {
-      console.log(user.user_id);
       const response = await api.get(`/occurrences/find/${user.user_id}`);
       if (response.data.success && response.data.occurrence.length > 0) {
         const occurrenceData = response.data.occurrence[0];
@@ -38,7 +37,6 @@ export default function VictimTracking() {
           });
         }
       } else {
-        console.log(response.data)
         showAlert('Nenhuma ocorrência encontrada', response.data.message || 'Sem dados disponíveis.');
       }
     } catch (error) {

@@ -52,7 +52,6 @@ export default function EmergencyScreen({ navigation }) {
         localizacao: `${location.latitude},${location.longitude}`, // Exemplo de localização
         usuario_id: user.user_id, // ID do usuário autenticado
       };
-      console.log(occurrenceData);
       await api.post(`/occurrences/`, occurrenceData);
       navigation.navigate("vTracking");
     } catch (error) {

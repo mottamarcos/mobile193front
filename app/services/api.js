@@ -2,7 +2,7 @@ import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: 'https://backend-mobile193.fly.dev/api',
   timeout: 5000, // Substitua pela URL da sua API
 });
 

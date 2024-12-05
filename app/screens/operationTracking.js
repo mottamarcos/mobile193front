@@ -36,7 +36,6 @@ export default function Tracking() {
 
   const getButtonTitle = () => {
     if (!selectedCall) return "Carregando...";
-    console.log(selectedCall.status); 
     switch (selectedCall.status) {
       case "Aguardando Resgate":
         return "Saída da base";
@@ -140,7 +139,6 @@ export default function Tracking() {
       detalhes: description,
       status: "Aguardando Resgate",
     };
-    console.log(payload);  
     api
       .put("/occurrences/status", {
         ocorrencia_id: payload.ocorrencia_id,
