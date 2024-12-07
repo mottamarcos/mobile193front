@@ -31,6 +31,7 @@ const getRoutesForRole = (role) => {
     case "Operador":
       return [
         { name: "HomeScreen", component: HomeScreen },
+        { name: "Register", component: Register },
         { name: "oTracking", component: OTracking },
         { name: "Settings", component: Settings },
         { name: "Login", component: Login },
@@ -40,6 +41,7 @@ const getRoutesForRole = (role) => {
       case "Militar":
         return [
           { name: "HomeScreen", component: HomeScreen },
+          { name: "Register", component: Register },
           { name: "oTracking", component: OTracking },
           { name: "Settings", component: Settings },
           { name: "Login", component: Login },

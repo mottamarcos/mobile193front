@@ -344,6 +344,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     padding: 15,
     borderWidth: 1,
+    marginTop:10,
     borderColor: colors.primaryLight,
     justifyContent: "space-between",
     alignItems: "center",

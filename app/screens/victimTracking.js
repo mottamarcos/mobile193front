@@ -99,7 +99,6 @@ export default function VictimTracking() {
                 longitude: region.longitude,
               }}
               title="Local da Ocorrência"
-              description={occurrence.descricao || "Sem descrição"}
             />
           </MapView>
         )}
