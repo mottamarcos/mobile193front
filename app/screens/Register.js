@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { useFocusEffect } from "@react-navigation/native";
 import { View, Text, StyleSheet } from "react-native";
 import CustomAlert from "../components/CustomAlert";
@@ -23,6 +23,7 @@ export default function RegisterScreen({ navigation, route }) {
   const [userType, setUserType] = useState(""); // Substituir por variável que vem do banco
   const navigationUse = useNavigation();
   const isAddNew = route?.params?.isCadastroNovo ?? false;
+  const [isAllOk, setIsAllOk] = useState(false);
   const { login } = useUser();
   let isAdmin = user?.tipo_usuario === "Admin"; // Ajustado para ser booleano
 
@@ -54,26 +55,35 @@ export default function RegisterScreen({ navigation, route }) {
   };
 
   const hideAlert = () => {
-    setIsAlertVisible(false);
+      setIsAlertVisible(false);
+      if (isAllOk) {
+        setIsAllOk(false);
+        navigation.navigate("Login");
+      }
   };
 
   const handleRegisterOrAdd = async () => {
     try {
+      if (password !== confirmPassword) {
+        setIsAllOk(false);
+        showAlert("Erro", "As senhas não coincidem. Por favor, verifique.");
+        return; // Sai da função se as senhas não coincidirem
+      }
       if (isAddNew || (isAdmin && isAddNew)) {
-        // Função para adicionar um novo usuário
-        await api.post("user/registerUser", {
+
+        const response = await api.post("user/registerUser", {
           nome: name,
           email,
           telefone: phone,
           senha: password,
-          tipo_usuario: userType,
+          tipo_usuario: isAdmin ? userType : "Usuário",
         });
-        showAlert("Sucesso", "Usuário adicionado com sucesso!");
-        if(!isAdmin){
-          navigation.navigate("Login");
+        if (response.data?.success) {
+          setIsAllOk(true);
+          showAlert("Sucesso", response.data.message);
         }
       } else {
-        //Função para alterar o próprio usuário
+        console.log("ta entrando aqui");
           await api.put("user/updateUser", {
             nome: name,
             email,
@@ -83,10 +93,14 @@ export default function RegisterScreen({ navigation, route }) {
           });
           const response = await api.get(`user/getUser/${user.user_id}`);
           login(response.data);
+          setIsAllOk(true);
           showAlert("Sucesso", "Usuário alterado com sucesso!");
+          return;
       }
     } catch (error) {
-      showAlert("Erro", error.response?.data?.message || "Ocorreu um erro ao salvar.");
+      setIsAllOk(false);
+      console.log(error);
+      showAlert("Erro", error?.response?.data?.message || "Ocorreu um erro ao salvar.");
     }
   };
 
@@ -161,7 +175,7 @@ export default function RegisterScreen({ navigation, route }) {
 
       {/* Botão: Registrar ou Adicionar */}
       <Button
-        title={isAdmin && isAddNew ? "Adicionar" : "Registrar"}
+        title={isAdmin || isAddNew ? "Adicionar" : "Alterar"}
         onPress={handleRegisterOrAdd}
         style={styles.button}
       />

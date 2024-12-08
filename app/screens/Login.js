@@ -8,7 +8,6 @@ import Icon from 'react-native-vector-icons/Feather';
 import api from "../services/api";
 import { useUser } from "../contexts/contextUser";
 
-
 export default function LoginScreen({ navigation }) {
   const [isAlertVisible, setIsAlertVisible] = useState(false);
   const [alertTitle, setAlertTitle] = useState("");
@@ -74,7 +73,7 @@ export default function LoginScreen({ navigation }) {
       <Input
         value={email}
         onChangeText={(text) => setEmail(text)}
-        placeholder="E-mail ou Nome de Usuário"
+        placeholder="E-mail"
         style={[styles.input]}
         keyboardType="email-address"
         autoCapitalize="none"
@@ -154,18 +153,6 @@ const styles = StyleSheet.create({
   },
   button: {
     marginTop: 20,
-  },
-  googleButton: {
-    marginTop: 10,
-    backgroundColor: "#4285F4",
-    paddingVertical: 15,
-    borderRadius: 8,
-    alignItems: "center",
-  },
-  googleButtonText: {
-    color: "#fff",
-    fontWeight: "bold",
-    fontSize: 16,
   },
   link: {
     marginTop: 10,
