@@ -1,0 +1,31 @@
+Como Solicitar a Exclusão da Sua Conta
+Se você deseja excluir a sua conta em nosso aplicativo, basta seguir as instruções abaixo:
+
+Envie um e-mail para solicitação de exclusão: Envie um e-mail para marcos.motta@rede.ulbra.br a partir do endereço de e-mail cadastrado na hora do registro no aplicativo.
+
+Assunto do e-mail: No campo de assunto, escreva: "Solicitação de Exclusão de Conta".
+
+Conteúdo do e-mail: No corpo do e-mail, por favor, inclua a seguinte informação:
+
+Seu nome completo
+A solicitação explícita para excluir sua conta
+Exemplo de e-mail:
+
+Assunto: Solicitação de Exclusão de Conta
+
+Corpo do e-mail:
+Olá,
+Gostaria de solicitar a exclusão da minha conta no [nome do aplicativo].
+Meu nome é [seu nome completo], e o e-mail cadastrado na conta é [seu e-mail cadastrado].
+
+Aguardo a confirmação da exclusão.
+Atenciosamente,
+[Seu nome completo]
+
+Prazo para Processamento:
+Após o envio do seu e-mail, nossa equipe processará a solicitação e confirmará a exclusão da sua conta em até [inserir prazo, por exemplo: 5 dias úteis].
+
+Importante:
+A solicitação de exclusão não poderá ser revertida. Após a exclusão, todos os dados associados à sua conta serão apagados permanentemente.
+Certifique-se de enviar o e-mail do endereço que foi usado para o registro no aplicativo, pois só poderemos processar a solicitação com o e-mail correto.
+Se tiver alguma dúvida ou precisar de mais informações, não hesite em nos contatar!
